@@ -4,6 +4,8 @@ const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
 
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 
 const server = http.createServer(app);
@@ -61,4 +63,4 @@ app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
-server.listen(4000, () => 'Server is running on port 4000');
+server.listen(PORT, () => 'Server is running on port 4000');
